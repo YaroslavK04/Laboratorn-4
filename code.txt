@@ -129,7 +129,23 @@ void obxod_1(struct Node* r,int l ){ // прямой обход
 }
 
 
+
+void obxod_2(struct Node* r,int l ){ // симетричный
+	if(r!= NULL){
+		obxod_2 ( r->left,l+1);
+		
+	for (int i = 0; i < l; i++)
+	{
+		printf(" ");
+	}
+		cout << r->data<< "\n" ;
+		obxod_2 ( r->right,l+1);
+	}
+
 }
+
+
+
 int main()
 {
 	setlocale(LC_ALL, "RUS");
