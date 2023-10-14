@@ -113,7 +113,6 @@ int search(struct Node* r, int l, int c) {
 
 }
 
-
 void obxod_1(struct Node* r,int l ){ // прямой обход
 	
 	
@@ -127,8 +126,6 @@ void obxod_1(struct Node* r,int l ){ // прямой обход
 		obxod_1 ( r->right,l+1);
 	}
 }
-
-
 
 void obxod_2(struct Node* r,int l ){ // симетричный
 	if(r!= NULL){
@@ -144,8 +141,18 @@ void obxod_2(struct Node* r,int l ){ // симетричный
 
 }
 
+void obxod_3(struct Node* r,int l){ // обратный
+	if(r!= NULL){
+		obxod_3 ( r->right,l+1);
+		obxod_3 ( r->left,l+1);
 
-
+	for (int i = 0; i < l; i++)
+	{
+		printf(" ");
+	}
+		cout << r->data << "\n" ;
+	}
+}
 int main()
 {
 	setlocale(LC_ALL, "RUS");
@@ -212,7 +219,7 @@ int main()
 	default:
 		cout << "Неверный вариант.\n";
 	}
-	/*cout << " Какой обход вы хотите совершить?\n 1) Прямой \n 2) Симметричный \n 3) Обратный \n";
+	cout << " Какой обход вы хотите совершить?\n 1) Прямой \n 2) Симметричный \n 3) Обратный \n";
 	cin >> vibor2;
 	switch (vibor2) {
 	case 1:
@@ -226,7 +233,7 @@ int main()
 		break;
 	default:
 		cout << "Неверный вариант.\n";
-	}*/
+	}
 	system("pause");
 	return 0;
 }
